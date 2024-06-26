@@ -1,29 +1,31 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Header from "./components/Header";
-import ShoeIndex from "./components/ShoeIndex";
+import { Outlet } from "react-router-dom";
+import { connect } from "react-redux";
+import { ADD_PRODUCTS } from "./store/actions";
 
-
-function App() {
-  const [products, setProducts] = useState([]);
-
+function App({ dispatch }) {
   useEffect(() => {
     fetch("/products")
       .then((res) => res.json())
       .then((data) => {
-        console.log("Data", data);
-        setProducts(data);
+        dispatch({
+          type: ADD_PRODUCTS,
+          payload: data,
+        });
       });
   }, []);
-  // console.log("products[0]?.img", products);
+
   return (
     <>
       <Header />
-
-      <main className="mt-16">
-        <ShoeIndex />
-      </main>
+      <Outlet />
     </>
   );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return { dispatch };
+};
+
+export default connect(null, mapDispatchToProps)(App);
