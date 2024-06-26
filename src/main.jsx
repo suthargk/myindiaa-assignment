@@ -7,6 +7,8 @@ import Store from "./components/Store/index.jsx";
 import { combineReducers, createStore } from "redux";
 import { storeReducer } from "./store/reducers/index.js";
 import { Provider } from "react-redux";
+import ShoeDetail from "./components/ShoeDetail/index.jsx";
+import Cart from "./components/Cart/index.jsx";
 
 async function enableMocking() {
   if (process.env.NODE_ENV !== "development") {
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Store />,
+      },
+      {
+        path: ":productId",
+        element: <ShoeDetail />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

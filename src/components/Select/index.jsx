@@ -34,7 +34,7 @@ const Select = ({ list, handleSort, selectedItem }) => {
                   <div
                     key={item.value}
                     onClick={() => handleSort({ value: item.value })}
-                    className={`duration-300 hover:opacity-50 ${
+                    className={`duration-300 hover:opacity-50 ₹{
                       selectedItem.value === item.value ? "opacity-50" : ""
                     }`}
                   >
