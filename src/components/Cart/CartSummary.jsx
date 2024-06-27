@@ -1,9 +1,17 @@
-const CartSummary = () => {
+import { getSubtotal, getTax } from "../../utils";
+
+const CartSummary = ({ cartProducts }) => {
+  const subtotal = (getSubtotal(cartProducts) || 0.0).toFixed(2);
+  const discount = (subtotal * 0.2 || 0.0).toFixed(2);
+  const tax = getTax(cartProducts);
+  const total = (subtotal - (discount + tax)).toFixed(2) || 0.0;
   return (
     <div className="p-5 bg-white rounded-md divide-y divide-dashed w-[350px] space-y-4">
       <div>
         <h3 className="text-zinc-500 text-lg">Delivery</h3>
-        <h5 className="text-zinc-400 text-sm">Delivery Date: June 24, 2024</h5>
+        <h5 className="text-zinc-400 text-sm">
+          Delivery Date: {cartProducts.length ? "July 07, 2024" : ""}
+        </h5>
       </div>
 
       <div className="pt-5">
@@ -24,11 +32,11 @@ const CartSummary = () => {
       <div className="pt-5">
         <div className="flex justify-between text-lg text-zinc-500">
           <h3 className="">Subtotal</h3>
-          <h3>₹80.90</h3>
+          <h3>₹{subtotal}</h3>
         </div>
         <div className="flex justify-between text-sm text-zinc-400">
           <h3 className="">Discount</h3>
-          <h3>(20%) - ₹16.19</h3>
+          <h3>(20%) - ₹{discount}</h3>
         </div>
         <div className="flex justify-between text-sm text-zinc-400">
           <h3 className="">Delivery</h3>
@@ -36,14 +44,14 @@ const CartSummary = () => {
         </div>
         <div className="flex justify-between text-sm text-zinc-400">
           <h3 className="">Tax</h3>
-          <h3>+ ₹14.00</h3>
+          <h3>+ ₹{tax}</h3>
         </div>
       </div>
 
       <div className="pt-5 space-y-6">
         <div className="flex justify-between text-lg text-zinc-800 font-medium">
           <h3 className="">Total</h3>
-          <h3>₹78.76</h3>
+          <h3>₹{total}</h3>
         </div>
 
         <div className="flex flex-col gap-2">

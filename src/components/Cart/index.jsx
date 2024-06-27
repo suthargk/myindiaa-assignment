@@ -13,7 +13,7 @@ const Cart = ({ cartProducts }) => {
   return (
     <div className="flex gap-4 mt-20 justify-center p-10">
       <CartProducts cartProducts={cartProducts} />
-      <CartSummary />
+      <CartSummary cartProducts={cartProducts}/>
     </div>
   );
 };

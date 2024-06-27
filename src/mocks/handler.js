@@ -9,7 +9,8 @@ export const handlers = [
         img: "./assets/flyknit.jpg",
         price: 5678.89,
         number_of_colors: 2,
-        quantity: 5,
+        totalQuantity: 5,
+        status: "Just Released!",
       },
       {
         id: "c7b3d8e0-5e0b-4b0f-8b3a-432sfdaf",
@@ -17,7 +18,7 @@ export const handlers = [
         img: "./assets/joyride.jpg",
         price: 9845.99,
         number_of_colors: 1,
-        quantity: 3,
+        totalQuantity: 3,
       },
       {
         id: "c7b3d8e0-5e0b-4b0f-8b3a-asfasfasda",
@@ -25,7 +26,8 @@ export const handlers = [
         img: "./assets/lebron.jpg",
         price: 8923.34,
         number_of_colors: 4,
-        quantity: 2,
+        totalQuantity: 2,
+        status: "Just Released!",
       },
       {
         id: "c7b3d8e0-5e0b-4b0f-8b3a-sdgfdsg",
@@ -33,7 +35,8 @@ export const handlers = [
         img: "./assets/legend-academy.jpg",
         price: 6999.99,
         number_of_colors: 2,
-        quantity: 1,
+        totalQuantity: 1,
+        status: "Sale!",
       },
       {
         id: "c7b3d8e0-5e0b-4b0f-8b3a-3b9sff4b3d3b3d",
@@ -41,7 +44,8 @@ export const handlers = [
         img: "./assets/metcon-5.jpg",
         price: 2999.99,
         number_of_colors: 3,
-        quantity: 4,
+        totalQuantity: 4,
+        status: "Sale!",
       },
       {
         id: "c7b3d8e0-5e0b-4b0f-8b3a-3b9f4b3d3bsafas3d",
@@ -49,7 +53,8 @@ export const handlers = [
         img: "./assets/pegasus.jpg",
         price: 4567.89,
         number_of_colors: 3,
-        quantity: 6,
+        totalQuantity: 6,
+        status: "Sale!",
       },
       {
         id: "c7b3d8e0-5e0b-4b0f-8b3a-asdfasfasf",
@@ -57,7 +62,7 @@ export const handlers = [
         img: "./assets/phantom-flyknit.jpg",
         price: 3456.54,
         number_of_colors: 2,
-        quantity: 10,
+        totalQuantity: 10,
       },
       {
         id: "c7b3d8e0-5e0b-4b0f-8b3a-sdgsdgfsgd",
@@ -65,7 +70,7 @@ export const handlers = [
         img: "./assets/phantom.jpg",
         price: 4567.34,
         number_of_colors: 4,
-        quantity: 20,
+        totalQuantity: 20,
       },
       {
         id: "c7b3d8e0-5e0b-4b0f-8b3a-3b9f4bwerewr3d3b3d",
@@ -73,7 +78,8 @@ export const handlers = [
         img: "./assets/react-infinity.jpg",
         price: 8343.5,
         number_of_colors: 3,
-        quantity: 10,
+        totalQuantity: 10,
+        status: "Just Released!",
       },
     ]);
   }),
