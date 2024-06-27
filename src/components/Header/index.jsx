@@ -38,7 +38,7 @@ const Header = ({ cartProducts }) => {
         </a>
       </nav>
 
-      <Link  className="relative">
+      <Link to="/cart" className="relative">
         <ShoppingBag />
         {totalCartProducts > 0 ? (
           <div className="absolute -top-1 -right-1 h-5 w-5 text-[10px] flex justify-center items-center text-white rounded-full bg-red-500">
