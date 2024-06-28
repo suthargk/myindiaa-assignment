@@ -16,7 +16,7 @@ const Select = ({ list, handleSort, selectedItem }) => {
   return (
     <div>
       <div className="flex gap-4 items-center">
-        <h6 className="text-zinc-500">Sort</h6>
+        <h6 className="text-zinc-500 hidden sm:block">Sort</h6>
         <button
           onClick={(e) => {
             e.stopPropagation();

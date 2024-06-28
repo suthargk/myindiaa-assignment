@@ -3,10 +3,14 @@ import Header from "./components/Header";
 import { Outlet } from "react-router-dom";
 import { connect } from "react-redux";
 import { ADD_PRODUCTS } from "./store/actions";
+import Footer from "./components/Footer";
 
 function App({ dispatch }) {
   useEffect(() => {
-    fetch("/products")
+    fetch("/products", {
+      method: "POST",
+      body: JSON.stringify({ sort: "newest_releases" }),
+    })
       .then((res) => res.json())
       .then((data) => {
         dispatch({
@@ -20,6 +24,7 @@ function App({ dispatch }) {
     <>
       <Header />
       <Outlet />
+      <Footer />
     </>
   );
 }

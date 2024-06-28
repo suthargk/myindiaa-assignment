@@ -6,7 +6,7 @@ const CartSummary = ({ cartProducts }) => {
   const tax = getTax(cartProducts);
   const total = (subtotal - (discount + tax)).toFixed(2) || 0.0;
   return (
-    <div className="p-5 bg-white rounded-md divide-y divide-dashed w-[350px] space-y-4">
+    <div className="p-5 bg-white rounded-md divide-y divide-dashed w-full lg:w-[350px] space-y-4">
       <div>
         <h3 className="text-zinc-500 text-lg">Delivery</h3>
         <h5 className="text-zinc-400 text-sm">

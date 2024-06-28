@@ -2,6 +2,8 @@ import { useState } from "react";
 import Select from "../Select";
 import ShoeGrid from "../ShoeGrid";
 import ShoeSidebar from "../ShoeSidebar";
+import { ADD_PRODUCTS } from "../../store/actions";
+import { connect } from "react-redux";
 
 const SORT_LIST = [
   {
@@ -10,27 +12,39 @@ const SORT_LIST = [
   },
   {
     label: "Price: High-Low",
-    value: "high-low",
+    value: "desc",
   },
   {
     label: "Price: Low-High",
-    value: "low-high",
+    value: "asc",
   },
 ];
 
-const ShoeIndex = () => {
+const ShoeIndex = ({ dispatch }) => {
   const [sortList] = useState(SORT_LIST);
   const [selectedSort, setSelectedSort] = useState(sortList[0]);
 
   const handleSort = ({ value }) => {
     const selectedItem = sortList.find((sortItem) => sortItem.value === value);
     setSelectedSort(selectedItem);
+
+    fetch(`/products`, {
+      method: "POST",
+      body: JSON.stringify({ sort: selectedItem.value }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        dispatch({
+          type: ADD_PRODUCTS,
+          payload: data,
+        });
+      });
   };
 
   return (
     <div className="flex flex-row-reverse p-10">
       <div className="flex-1">
-        <div className="flex justify-between my-8 items-center">
+        <div className="flex justify-between mb-8 items-center">
           <h3 className="text-2xl">Running</h3>
           <Select
             list={sortList}
@@ -40,11 +54,15 @@ const ShoeIndex = () => {
         </div>
         <ShoeGrid />
       </div>
-      <div className="basis-64">
+      {/* <div className="basis-64">
         <ShoeSidebar />
-      </div>
+      </div> */}
     </div>
   );
 };
 
-export default ShoeIndex;
+const mapDispatchToProps = (dispatch) => {
+  return { dispatch };
+};
+
+export default connect(null, mapDispatchToProps)(ShoeIndex);
