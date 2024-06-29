@@ -43,7 +43,6 @@ const CartProduct = ({ product, dispatch }) => {
                 onChange={handleChangeQuantity}
                 onClick={(e) => e.preventDefault()}
                 className="p-0.5 focus:outline-none border border-zinc-200 rounded-md min-w-16"
-                defaultValue={quantity}
                 value={quantity}
               >
                 {new Array(product.totalQuantity)

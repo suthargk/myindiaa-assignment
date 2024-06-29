@@ -13,7 +13,7 @@ const ShoeDetail = ({ cartProducts, productList, dispatch }) => {
 
   useEffect(() => {
     const hasProduct = cartProducts.find((product) => product.id === productId);
-    console.log("hasProduct", hasProduct);
+
     if (hasProduct?.totalQuantity <= hasProduct?.quantity) {
       setIsOutOfStock(true);
     } else {

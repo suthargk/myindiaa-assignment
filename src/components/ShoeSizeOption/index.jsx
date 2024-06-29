@@ -1,9 +1,10 @@
 const ShoeSize = ({ handleShoeSize, shoeSize, size }) => {
+
   return (
     <div
       onClick={() => handleShoeSize(size)}
-      className={`cursor-pointer min-w-fit hover:border-black duration-300 w-full md:w-24 border border-zinc-200 px-6 py-2 rounded-md ${
-        size === shoeSize ? "border-black" : ""
+      className={`cursor-pointer min-w-fit hover:border-black duration-300 w-full md:w-24 border  px-6 py-2 rounded-md ${
+        size === shoeSize ? "border-black" : "border-zinc-200"
       }`}
     >
       {size}
