@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const BADGE_COLOR = {
-  0: { color: "unset", status: 0 },
+  0: { color: "unset", status: "" },
   1: { color: "bg-rose-600", status: "Sale!" },
   2: { color: "bg-indigo-600", status: "Just Released!" },
 };
@@ -10,7 +10,7 @@ const ShoeCard = ({ product }) => {
   return (
     <Link
       to={product.id}
-      className="relative min-w-80 flex-1 rounded-md overflow-hidden"
+      className="relative min-w-80 flex-1"
     >
       <div
         className={`${
@@ -21,7 +21,7 @@ const ShoeCard = ({ product }) => {
           {BADGE_COLOR[product.status].status}
         </h3>
       </div>
-      <div className="">
+      <div className="h-[300px] bg-zinc-200 rounded-md overflow-hidden">
         <img src={product.img} />
       </div>
       <div className="flex justify-between mt-4">
