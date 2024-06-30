@@ -21,8 +21,8 @@ const ShoeCard = ({ product }) => {
           {BADGE_COLOR[product.status].status}
         </h3>
       </div>
-      <div className="h-[300px] bg-zinc-200 rounded-md overflow-hidden">
-        <img src={product.img} />
+      <div className="lg:h-[300px] bg-zinc-200 rounded-md overflow-hidden">
+        <img className="h-full w-full" src={product.img} />
       </div>
       <div className="flex justify-between mt-4">
         <div className="">
