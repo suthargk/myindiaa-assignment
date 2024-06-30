@@ -21,7 +21,6 @@ async function enableMocking() {
   // once the Service Worker is up and ready to intercept requests.
   return worker.start({
     serviceWorker: {
-      quiet: true,
       url: `/mockServiceWorker.js`,
     },
   });
