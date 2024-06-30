@@ -21,7 +21,7 @@ async function enableMocking() {
   // once the Service Worker is up and ready to intercept requests.
   return worker.start({
     serviceWorker: {
-      url: "myindiaa-assignment.vercel.app/mockServiceWorker.js",
+      url: "/mockServiceWorker.js",
     },
   });
 }
