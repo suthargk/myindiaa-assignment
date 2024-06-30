@@ -22,7 +22,7 @@ async function enableMocking() {
   return worker.start({
     serviceWorker: {
       quiet: true,
-      url: `${window.location.origin}/mockServiceWorker.js`,
+      url: `/mockServiceWorker.js`,
     },
   });
 }
